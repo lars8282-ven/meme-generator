@@ -1,0 +1,10 @@
+# Netlify configuration for Meme Generator
+[build]
+  publish = "."
+  command = "echo 'No build step required'"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+

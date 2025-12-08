@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meme Generator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-wrapper">
+        <header class="app-header">
+            <div class="header-content">
+                <h1 class="app-title">
+                    Meme Generator
+                </h1>
+                <p class="app-subtitle">Create hilarious memes in seconds</p>
+            </div>
+        </header>
+        
+        <main class="app-main">
+            <div class="workspace">
+                <aside class="sidebar">
+                    <div class="sidebar-section">
+                        <div class="section-header">
+                            <h2 class="section-title">Templates</h2>
+                        </div>
+                        <div class="section-content">
+                            <div id="templatesGallery" class="templates-gallery"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="sidebar-section">
+                        <div class="section-header">
+                            <h2 class="section-title">Upload Image</h2>
+                        </div>
+                        <div class="section-content">
+                            <input type="file" id="imageInput" accept="image/jpeg,image/jpg,image/png,image/gif,image/webp" class="file-input">
+                            <label for="imageInput" class="file-upload-btn">
+                                <span class="upload-text">Choose Image</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="sidebar-section">
+                        <div class="section-header">
+                            <h2 class="section-title">Text Overlays</h2>
+                            <button id="addTextBtn" class="icon-btn" title="Add Text Box">
+                                <span>+</span>
+                            </button>
+                        </div>
+                        <div class="section-content">
+                            <div id="textBoxesList" class="text-boxes-list"></div>
+                            <button id="addTextBtnFull" class="btn-add-text">
+                                <span>+</span>
+                                Add Text Box
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="sidebar-section sidebar-actions">
+                        <button id="downloadBtn" class="btn-download">
+                            <span>Download Meme</span>
+                        </button>
+                    </div>
+                </aside>
+                
+                <div class="canvas-area">
+                    <div class="canvas-wrapper">
+                        <canvas id="memeCanvas"></canvas>
+                        <div id="canvasPlaceholder" class="canvas-placeholder">
+                            <div class="placeholder-content">
+                                <h3 class="placeholder-title">Ready to create?</h3>
+                                <p class="placeholder-text">Upload an image to get started</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
