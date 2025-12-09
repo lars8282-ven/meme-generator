@@ -5,6 +5,7 @@ import MemeModal from './MemeModal';
 
 export default function MemeFeed() {
   const [selectedMeme, setSelectedMeme] = useState(null);
+  const [error, setError] = useState(null);
   const { data, isLoading } = db.useQuery({
     memes: {},
     upvotes: {},
@@ -42,8 +43,25 @@ export default function MemeFeed() {
   if (isLoading) {
     return (
       <div className="feed-container">
+        <h1 className="app-title" style={{ textAlign: 'center', marginBottom: '16px' }}>
+          Meme Feed
+        </h1>
         <div className="empty-feed">
           <h3>Loading memes...</h3>
+        </div>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="feed-container">
+        <h1 className="app-title" style={{ textAlign: 'center', marginBottom: '16px' }}>
+          Meme Feed
+        </h1>
+        <div className="empty-feed">
+          <h3>Error loading memes</h3>
+          <p>{error}</p>
         </div>
       </div>
     );
@@ -57,7 +75,7 @@ export default function MemeFeed() {
         </h1>
         <div className="empty-feed">
           <h3>No memes yet!</h3>
-          <p>Be the first to create and post a meme.</p>
+          <p>Be the first to create and post a meme. Sign in to create one!</p>
         </div>
       </div>
     );
